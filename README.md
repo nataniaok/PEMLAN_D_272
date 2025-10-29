@@ -1,42 +1,70 @@
-/*
-# 🍽️ Aplikasi Nota Pemesanan Restoran (Interaktif)
+# 💼 Tugas 2 – Pemrograman Lanjut (PEMLAN_D_272)
 
-Program ini merupakan implementasi dari **Modul 3 - Pemrograman Lanjut (Modern Programming Environment & Documentation Style)**.
-Aplikasi dikembangkan menggunakan bahasa **Java** dengan konsep **Object-Oriented Programming (OOP)**,
-serta memanfaatkan fitur **autocomplete**, **Live Template**, dan **JavaDoc** pada **IntelliJ IDEA**.
+## 📌 Deskripsi Program
+Program ini merupakan simulasi sederhana mengenai **manajemen karyawan (Employee)**.  
+Program menampilkan informasi karyawan sebelum dan sesudah mendapatkan **bonus dan promosi jabatan**.
 
-## ✨ Deskripsi Program
-Aplikasi ini mensimulasikan sistem pemesanan makanan dan minuman di restoran.
-User dapat:
-- Memilih jenis menu (makanan atau minuman)
-- Memasukkan nama menu (dengan harga otomatis)
-- Menentukan jumlah pesanan
-- Menentukan apakah makanan pedas atau tidak
-- Menentukan apakah minuman dingin atau panas
+## 🧩 Struktur Program
+tugas2/
+├── src/
+│ ├── Employee.java
+│ └── MainApp.java
+├── .idea/
+├── out/
+├── .gitignore
+├── tugas2.iml
+└── README.md
 
-Program menghitung subtotal, pajak (10%), dan diskon (5%) jika total > Rp50.000, lalu menampilkan nota lengkap di konsol.
+## 🧠 Penjelasan Kelas
 
-## 🧩 Fitur Utama
-- 🍜 Harga Otomatis dari nama menu
-- 🌶️ Pedas/Tidak Pedas untuk makanan
-- ❄️ Dingin/Panas untuk minuman
-- ⚠️ Validasi cerdas: tidak bisa input makanan di menu minuman dan sebaliknya
-- 💬 Pesan interaktif
-- 💰 Hitung otomatis (subtotal, pajak, diskon)
-- 📋 Nota pembelian di konsol
-- 🧱 OOP: Inheritance (MenuItem → Makanan/Minuman)
-- 🧾 JavaDoc dan modularisasi sesuai Modul 3
+### `Employee.java`
+Kelas `Employee` merepresentasikan data dan perilaku seorang karyawan.  
+Berisi atribut:
+- `name` : Nama karyawan
+- `salary` : Gaji karyawan
+- `position` : Jabatan karyawan
+- `BONUS_RATE` : Konstanta bonus sebesar 20% dari gaji
 
-## 🧱 Struktur Kelas
-- MenuItem.java → Kelas induk
-- Makanan.java → Turunan untuk makanan
-- Minuman.java → Turunan untuk minuman
-- Order.java → Mengelola daftar pesanan
-- Main.java → Program utama
+Metode utama:
+- `giveBonus()` → Menambahkan bonus ke gaji berdasarkan `BONUS_RATE`
+- `promote(String newPosition, double raise)` → Mengubah jabatan dan menambahkan kenaikan gaji
+- `displayInfo()` → Menampilkan informasi karyawan
 
-## 🧾 Pengembang
-**Nama:** Natania Oktaviani  
-**NIM:** 272  
-**Mata Kuliah:** Pemrograman Lanjut (Modul 3 - 2025/2026)  
-**Universitas:** Universitas Muhammadiyah Malang
-*/
+Kelas ini juga menerapkan **enkapsulasi** dengan menggunakan modifier `private` pada atribut, serta menyediakan **getter dan setter** untuk mengakses atau mengubah data dengan aman.  
+Selain itu, dilakukan **refactoring** pada metode `calculateBonus()` agar kode lebih modular dan mudah dipelihara.
+
+### `MainApp.java`
+Kelas utama (`main`) untuk menjalankan program.  
+Langkah yang dilakukan:
+1. Membuat objek `Employee`
+2. Menampilkan informasi sebelum promosi
+3. Memberikan bonus dan promosi jabatan
+4. Menampilkan informasi setelah promosi
+
+## 🧾 Contoh Output
+=== BEFORE PROMOTION ===
+Name: Natania Oktaviani
+Position: Staff
+Salary: 5000000.0
+=== AFTER PROMOTION ===
+Name: Natania Oktaviani
+Position: Supervisor
+Salary: 7200000.0
+
+## 🎯 Tujuan Pembelajaran
+- Menerapkan **konsep kelas dan objek** dalam Java
+- Mempraktikkan **enkapsulasi** dan penggunaan **modifier akses**
+- Mengimplementasikan **konstanta (final)** dan **refactoring method**
+- Menguji interaksi antar objek melalui **method call**
+
+## ⚙️ Cara Menjalankan Program
+1. Buka project di **IntelliJ IDEA** atau IDE Java lainnya.
+2. Pastikan file `MainApp.java` berada di folder `src/`.
+3. Jalankan program dengan menekan tombol ▶️ **Run** pada `MainApp.java`.
+
+---
+
+📚 **Dibuat oleh:**  
+**Natania Oktaviani**  
+Kelas: D-272  
+Mata Kuliah: Pemrograman Lanjut – Modul 3  
